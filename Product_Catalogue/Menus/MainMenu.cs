@@ -39,15 +39,15 @@ public class MainMenu
 
             case "2":
                 Console.Clear();
-                ListProducts();
+                _productMenu.ListProducts();
                 Console.Write("Press any key to continue...");
                 Console.ReadKey();
                 break;
 
-            case "3":
+            case "3": //Work in progress
                 break;
 
-            case "4":
+            case "4": //Work in progress
                 break;
 
             case "0":
@@ -61,22 +61,7 @@ public class MainMenu
         }
 
     }
-   public void ListProducts()
-    {
-        var products = _productService.ListProducts();
-
-        if (products.Count == 0)
-        {
-            Console.WriteLine("No products available.");
-            return;
-        }
-       
-        Console.WriteLine("Product List:");
-        foreach (var product in products)
-        {
-            Console.WriteLine($"|| ID: {product.Id} || Name: {product.Name} || Price: {product.Price:C} ||");
-        }
-    }
+   
 }
 
 

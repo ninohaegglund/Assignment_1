@@ -14,7 +14,7 @@ namespace Product_Catalogue.Services
         }
         public void RemoveItem(Product product) // Work in progress
         {
-
+            _products.Remove(product);
         }
         public List<Product> ListProducts()
         {

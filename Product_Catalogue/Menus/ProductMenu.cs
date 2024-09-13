@@ -41,7 +41,24 @@ public class ProductMenu
 
 
         }
-      }
+    public void ListProducts()
+    {
+        var products = _productService!.ListProducts();
+
+        if (products.Count == 0)
+        {
+            Console.WriteLine("No products available.");
+            return;
+        }
+
+        Console.WriteLine("Product List:");
+        foreach (var product in products)
+        {
+            Console.WriteLine($"|| ID: {product.Id} || Name: {product.Name} || Price: {product.Price:C} ||");
+        }
+    }
+}
+
    
   
 
