@@ -1,12 +1,49 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Product_Catalogue.Models;
+using Product_Catalogue.Services;
+using System.ComponentModel.Design;
 
-namespace Product_Catalogue.Menus
+namespace Product_Catalogue.Menus;
+
+public class ProductMenu
+    //Class that manages the product menu
 {
-    internal class ProductMenu
+    private readonly ProductService? _productService;
+   
+    public ProductMenu(ProductService productService)
     {
+        _productService = productService;
     }
-}
+      public  void AddProduct()
+      {
+        Console.Write("Add Product: ");
+        var name = Console.ReadLine();
+
+        Console.Write("Enter price: ");
+        if (decimal.TryParse(Console.ReadLine(), out decimal price))
+        {
+
+            var product = new Product
+
+            {
+                Name = name!,
+                Price = price
+            };
+
+            _productService?.AddItemToList(product);
+
+            Console.Write("Product added succesfully, press any key to continue:  ");
+        }
+        else
+        {
+            Console.WriteLine("Invalid input");
+        }
+
+
+
+        }
+      }
+   
+  
+
+
+

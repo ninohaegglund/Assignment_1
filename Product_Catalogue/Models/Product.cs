@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Product_Catalogue.Models
 {
-    internal class Product
+    public class Product
     {
+        public Guid Id { get; set; } = Guid.NewGuid();
+        public string Name { get; set; } = null!;
+        public decimal Price { get; set; }
+
     }
 }
