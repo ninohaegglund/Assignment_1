@@ -29,21 +29,19 @@ public class ProductMenu
                 Price = price
             };
 
-            _productService?.AddItemToList(product);
+            _productService.AddItemToList(product);
 
-            Console.Write("Product added succesfully, press any key to continue:  ");
+            Console.Write("Product added succesfully, press any key to continue...  ");
         }
         else
         {
             Console.WriteLine("Invalid input");
         }
 
-
-
         }
     public void ListProducts()
     {
-        var products = _productService!.ListProducts();
+        var products = _productService.ListProducts();
 
         if (products.Count == 0)
         {

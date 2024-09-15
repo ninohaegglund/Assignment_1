@@ -19,11 +19,10 @@ public class MainMenu
 
     public void MenuInterface()
     {
-
         Console.Clear();
-        Console.WriteLine("1. Add Product ");
-        Console.WriteLine("2. List Products");
-        Console.WriteLine("3. Save product to file");
+        Console.WriteLine("1. Add product ");
+        Console.WriteLine("2. List products");
+        Console.WriteLine("3. Save products to file");
         Console.WriteLine("4. Load products");
         Console.WriteLine("0. Exit");
 
@@ -44,10 +43,10 @@ public class MainMenu
                 Console.ReadKey();
                 break;
 
-            case "3": //Work in progress
+            case "3": 
                 break;
 
-            case "4": //Work in progress
+            case "4": 
                 break;
 
             case "0":
