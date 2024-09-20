@@ -1,10 +1,6 @@
 ﻿using Product_Catalogue.Services;
-using Product_Catalogue.Models;
-using System.Security.Cryptography.X509Certificates;
-using Product_Catalogue.Menus;
 
 namespace Product_Catalogue.Menus;
-
 
 public class MainMenu
 
@@ -35,22 +31,21 @@ public class MainMenu
                 _productMenu.AddProduct();
                 Console.ReadKey();
                 break;
-
+               
             case "2":
                 Console.Clear();
                 _productMenu.ListProducts();
-                Console.Write("Press any key to continue...");
                 Console.ReadKey();
                 break;
 
-            case "3": 
+            case "3":
+                
                 break;
 
             case "4": 
                 break;
 
             case "0":
-                Console.WriteLine("Goodbye!");
                 Environment.Exit(0);
                 break;
 

@@ -1,6 +1,4 @@
-﻿using Product_Catalogue.Menus;
-using Product_Catalogue.Models;
-using System.Threading.Channels;
+﻿using Product_Catalogue.Models;
 
 namespace Product_Catalogue.Services
 {
@@ -12,6 +10,7 @@ namespace Product_Catalogue.Services
         {
             _products.Add(product);
         }
+ 
         public void RemoveItem(Product product) // Work in progress
         {
             _products.Remove(product);
@@ -21,9 +20,5 @@ namespace Product_Catalogue.Services
             return _products;
         }
 
-
-        
-
-            
     }
 }
