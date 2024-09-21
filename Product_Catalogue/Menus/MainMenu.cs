@@ -12,7 +12,6 @@ public class MainMenu
         _productService = productService;
         _productMenu = productMenu;
     }
-
     public void MenuInterface()
     {
         Console.Clear();
@@ -39,10 +38,15 @@ public class MainMenu
                 break;
 
             case "3":
-                
+                Console.Clear();
+                SaveProducts();
+                Console.ReadKey();
                 break;
 
-            case "4": 
+            case "4":
+                Console.Clear();
+                LoadProducts();
+                Console.ReadKey();
                 break;
 
             case "0":
@@ -51,11 +55,24 @@ public class MainMenu
 
             default:
                 return;
-
         }
-
     }
-   
+    private void SaveProducts()
+    {
+        if (_productService.SaveProducts())
+        {
+            Console.WriteLine("Products saved successfully.");
+        }
+        else
+        {
+            Console.WriteLine("Error saving products...");
+        }
+    }
+    private void LoadProducts()
+    {
+        _productService.LoadProducts();
+        Console.WriteLine("Products loaded successfully.");
+    }
 }
 
 
