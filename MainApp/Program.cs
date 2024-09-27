@@ -1,4 +1,4 @@
-﻿using Product_Catalogue.Menus;
+﻿using MainApp.Menus;
 using Product_Catalogue.Services;
 
 class Program

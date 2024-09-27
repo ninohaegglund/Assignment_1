@@ -1,9 +1,9 @@
 ﻿using Product_Catalogue.Models;
 using Product_Catalogue.Services;
 
-namespace Product_Catalogue.Menus;
+namespace MainApp.Menus;
 
-public class ProductMenu
+internal class ProductMenu
    
 {
     private readonly ProductService? _productService;
@@ -14,6 +14,7 @@ public class ProductMenu
     }
       public void AddProduct()
       {
+        Console.Clear();
         Console.Write("Add Product: ");
         var name = Console.ReadLine();
 
@@ -38,7 +39,10 @@ public class ProductMenu
                 Console.WriteLine("Invalid input");
             }
 
+        Console.ReadKey();
     }
+
+
     public void ListProducts()
     {
        var products = _productService!.ListProducts();
@@ -57,6 +61,7 @@ public class ProductMenu
             }
 
     }
+
 }
 
    
