@@ -7,7 +7,7 @@ namespace Product_Catalogue.Services
     {
         private readonly string _filePath = (@"c:\projects\products.json");
 
-        public bool SaveToFile(List<Product> products)
+        public virtual bool SaveToFile(List<Product> products) //virtual allows method to be mocked
         {
             try
             {
@@ -23,7 +23,7 @@ namespace Product_Catalogue.Services
         }
 
        
-        public List<Product> LoadFromFile()
+        public virtual List<Product> LoadFromFile() // Same here
         {
             try
             {

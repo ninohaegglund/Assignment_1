@@ -8,9 +8,13 @@ namespace Product_Catalogue.Services
         private List<Product> _products = new List<Product>(); //initializing list
         private readonly FileService _fileService;
 
-        public ProductService()
+        public ProductService() : this(new FileService()) //Default Constructor
         {
-            _fileService = new FileService(); // Initialize the FileService
+        }
+
+        public ProductService(FileService fileService) // Cunstructor for dependency injection, necessary for mocking fileservice
+        {
+            _fileService = fileService;
             LoadProducts();
         }
 
