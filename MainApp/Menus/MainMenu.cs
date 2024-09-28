@@ -28,16 +28,14 @@ public class MainMenu
         {
             case "1":
                 _productMenu.AddProduct();
-                Console.ReadKey();
-                break;
-               
+                break;   
+                
             case "2":
                 _productMenu.DisplayProducts();
-                Console.ReadKey();
                 break;
+
             case "3":
                 _productMenu.RemoveProductByGuid();
-                Console.ReadKey();
                 break;
 
             case "0":

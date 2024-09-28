@@ -8,11 +8,9 @@ public class ProductService_Tests
     [Fact]
     public void AddToList_ShouldAddProductToListAndContainCorrectNumberOfProducts()
     {
-        //Arrange
-        //Mockar FileService
-        var mockFileService = new Mock<FileService>();
-        // Startar en tom lista
-        var emptyProductList = new List<Product>(); 
+        //Arrange      
+        var mockFileService = new Mock<FileService>();  //Mockar FileService
+        var emptyProductList = new List<Product>();  // Startar en tom lista
         mockFileService.Setup(f => f.LoadFromFile()).Returns(emptyProductList);
 
 
@@ -27,7 +25,7 @@ public class ProductService_Tests
 
         //Kontrollerar så att rätt antal produkter finns i listan
         Assert.Equal(2, products.Count);
-        //Kontrollerar så att en specifik product finns i listan
+        //Kontrollerar så att en specifik produkt finns i listan
         Assert.Contains(product1, products);
         Assert.Contains(product2, products);
     }

@@ -36,13 +36,14 @@ internal class ProductMenu
             else
             {
                 _productService!.AddToList(product);
-                Console.Write("Product added succesfully, press any key to continue...");
+                Console.Write("Product added succesfully :), press any key to continue: ");
             }
         }
         else
         {
             Console.WriteLine("Invalid input");
         }
+        Console.ReadKey();
     }
     public void DisplayProducts()
     
@@ -51,19 +52,28 @@ internal class ProductMenu
 
         var products = _productService!.GetProducts();
 
-            if (products.Count == 0)
-            {
-                Console.WriteLine("No products available.");
-                return;
-          
-            }
+        if (products.Count == 0)
+        {
+            Console.WriteLine("No products available");
+            Console.ReadKey();
+            return;
+        }       
 
-            Console.WriteLine($"Product List:\n");
-            foreach (var product in products)
-            {
-           
-            Console.WriteLine($"|| ID: {product.Id} || Name: {product.Name} || Price: {product.Price:C} ||");
+        Console.WriteLine($"Product List:");
+
+        foreach (var product in products)
+        {       
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine($"\n|| Id: {product.Id} || Name: {product.Name}|| Price: {product.Price:C}");
+            Console.ResetColor();        
+
         }
+
+        // Reset to the default console color
+        Console.ResetColor();
+
+        Console.Write($"\nPress any key to close the list: ");
+        Console.ReadKey();
 
     }
     public void RemoveProductByGuid()
@@ -77,6 +87,7 @@ internal class ProductMenu
         if (!Guid.TryParse(Id, out Guid guid))
         {
             Console.WriteLine("Invalid GUID format");
+            Console.ReadKey();
             return;
         }
        
@@ -85,12 +96,14 @@ internal class ProductMenu
         if (productToRemove != null)
         {
             _productService.RemoveProduct(productToRemove);
-            Console.WriteLine("Product removed successfully");
+            Console.Write($"\nProduct removed successfully");
         }
         else
         {
             Console.WriteLine("Product not found");
-        } 
+        }
+
+        Console.ReadKey();
     }
 }
 
