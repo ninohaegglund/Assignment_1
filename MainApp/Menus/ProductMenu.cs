@@ -63,7 +63,7 @@ internal class ProductMenu
 
         foreach (var product in products)
         {       
-            Console.ForegroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine($"\n|| Id: {product.Id} || Name: {product.Name}|| Price: {product.Price:C}");
             Console.ResetColor();        
 
