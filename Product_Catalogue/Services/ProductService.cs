@@ -8,7 +8,7 @@ namespace Product_Catalogue.Services
         private List<Product> _products = new List<Product>(); //initializing list
         private readonly FileService _fileService;
 
-        public ProductService() : this(new FileService(@"c:\projects\products.json")) //Default Constructor
+        public ProductService() : this(new FileService(Path.Combine(AppContext.BaseDirectory, "products.json"))) //Default Constructor
         {
         }
 

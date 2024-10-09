@@ -9,7 +9,7 @@ public class ProductService_Tests
     public void AddToList_ShouldAddProductToListAndContainCorrectNumberOfProducts()
     {
         //Arrange      
-        var mockFileService = new Mock<FileService>(@"c:\projects\test_products.json");  //Mockar FileService
+        var mockFileService = new Mock<FileService>("");  //Mockar FileService
         var emptyProductList = new List<Product>();  // Startar en tom lista
         mockFileService.Setup(f => f.LoadFromFile()).Returns(emptyProductList);
 

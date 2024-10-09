@@ -43,6 +43,8 @@ public class MainMenu
                 break;
 
             default:
+                Console.Write("incorrect choice. Press any key to continue...");
+                Console.ReadKey();
                 return;
         }
     }
